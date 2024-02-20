@@ -11,8 +11,8 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-settings_module = 'warehouse.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'azure_project.settings'
+settings_module = 'warehouse.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'warehouse.settings'
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'warehouse.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
 application = get_wsgi_application()
