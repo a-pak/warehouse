@@ -5,6 +5,7 @@ from .settings import BASE_DIR
 DEBUG = False
 ALLOWED_HOSTS = [os.environ['WEBSITE_HOSTNAME']]
 CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['WEBSITE_HOSTNAME']]
+SECRET_KEY = os.environ['SECRET_KEY']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
