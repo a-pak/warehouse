@@ -7,6 +7,8 @@ CSRF_TRUSTED_ORIGINS = ['https://'+os.environ['WEBSITE_HOSTNAME']]
 SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = False
 
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -17,4 +19,7 @@ INSTALLED_APPS = [
     'corsheaders',
     "whitenoise.runserver_nostatic"
 ]
+
+STATICFILES_STORAGE = ('whitenoise.storage.CompressedManifestStaticFilesStorage')
+STATIC_ROOT = os.path.join(BASE_DIR)
 
